@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
-const port = 3000;
+const port =  process.env.PORT || 3000;
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 var moment = require("moment");
@@ -37,7 +37,6 @@ mongoose
   )
   .then(() => {
     app.listen(port, () => {
-      console.log("000000000")
       console.log(`http://localhost:${port}`);
     });
   })
